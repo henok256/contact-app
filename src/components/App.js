@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import { BrowserRouter, useRoutes, Route, Routes } from 'react-router-dom';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { v4 as uuidv4 } from 'uuid';
 import './App.css';
 import Header from "./Header";
@@ -33,15 +33,17 @@ function App() {
   
   return (
     <div className='ui container'>
-      {/*<BrowserRouter>
+      <BrowserRouter>
+      <Header /> <br></br><br></br>
       <Routes>
-         <Route   path="/"    element={<ContactList  />}/>
-            <Route   path="/add" element={<AddContact/>}/>
-            </Routes>
-  </BrowserRouter>*/}
-            <Header /> 
-         <AddContact addContactHandler={addContactHandler}/>
-        <ContactList contacts={contacts} getContactId={removeContactHandler}/>
+          <Route   path="/"    element={<ContactList contacts={contacts} getContactId={removeContactHandler} />}/>
+          <Route   path="/add" element={<AddContact addContactHandler={addContactHandler}/>} />
+          {/*<AddContact addContactHandler={addContactHandler}/>
+           <ContactList contacts={contacts} getContactId={removeContactHandler}/>*/}
+          </Routes>
+ 
+  </BrowserRouter>
+            
      
       
     </div>
