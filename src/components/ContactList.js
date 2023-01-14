@@ -7,6 +7,9 @@ const ContactList=(props)=>{
     const deleteContactHandler=(id)=>{
         props.getContactId(id);
     };
+    const reseterV=(id)=>{
+      props.reseter(id);
+    }
   /*const contacts=[{
     name:"henok",
     email:"henok23@gmail.com",
@@ -33,7 +36,7 @@ const ContactList=(props)=>{
      <Link to="/add">
      <button className='ui button blue right' style={{"float":"right"}}>Add Contact</button>
      </Link>
-     
+     <button onClick={reseterV}>reset</button>
       <div>{renderContactList}</div>
     </div>
     )

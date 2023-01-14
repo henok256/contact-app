@@ -14,6 +14,10 @@ function App() {
     console.log(contact);
     setContacts([...contacts, {id: uuidv4(), ...contact}]);// adding the new contacts into the previous contacts
   };
+  const reseter=()=>{
+    setContacts([]);
+
+  };
   const removeContactHandler=(id)=>{
     const newContactList= contacts.filter((contact)=>{
       return contact.id !== id;
@@ -36,19 +40,14 @@ function App() {
       <BrowserRouter>
       <Header /> <br></br><br></br>
       <Routes>
-          <Route   path="/"    element={<ContactList contacts={contacts} getContactId={removeContactHandler} />}/>
+          <Route   path="/"   element={<ContactList contacts={contacts} reseter={reseter}  getContactId={removeContactHandler} />}/>
           <Route   path="/add" element={<AddContact addContactHandler={addContactHandler}/>} />
           {/*<AddContact addContactHandler={addContactHandler}/>
            <ContactList contacts={contacts} getContactId={removeContactHandler}/>*/}
           </Routes>
- 
-  </BrowserRouter>
-            
-     
-      
+     </BrowserRouter>
     </div>
-   
-  )
-}
+  );
+};
 
 export default App;
