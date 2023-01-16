@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { BrowserRouter, Route, Routes, } from 'react-router-dom';
 import { v4 as uuidv4 } from 'uuid';
 import './App.css';
 import Header from "./Header";
@@ -41,10 +41,20 @@ function App() {
       <Header /> <br></br><br></br>
       <Routes>
           <Route   path="/"   element={<ContactList contacts={contacts} reseter={reseter}  getContactId={removeContactHandler} />}/>
+          {/*<Route path="/" render={(props)=>(
+            <ContactList 
+            {...props}
+            contacts={contacts}
+            getContactId={removeContactHandler}
+            reseter={reseter}
+             />
+             />
+          )}*/}
+          
           <Route   path="/add" element={<AddContact addContactHandler={addContactHandler}/>} />
           {/*<AddContact addContactHandler={addContactHandler}/>
            <ContactList contacts={contacts} getContactId={removeContactHandler}/>*/}
-          </Routes>
+      </Routes>
      </BrowserRouter>
     </div>
   );
