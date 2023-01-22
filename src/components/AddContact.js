@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './App.css';
@@ -7,7 +6,7 @@ const AddContact = (props) => {
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
     const navigate = useNavigate();
-
+    
     const add = (e) => {
         e.preventDefault();
         if(name === "" || email === ""){

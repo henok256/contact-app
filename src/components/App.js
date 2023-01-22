@@ -5,11 +5,12 @@ import './App.css';
 import Header from "./Header";
 import AddContact from './AddContact';
 import ContactList from './ContactList';
+import ContactDetail from './ContactDetail';
 
 function App() {
   const LOCAL_STORAGE_KEY="contacts";
   const [contacts, setContacts]= useState(JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY)));
-
+     
   const addContactHandler=(contact)=>{
     console.log(contact);
     setContacts([...contacts, {id: uuidv4(), ...contact}]);// adding the new contacts into the previous contacts
@@ -41,19 +42,8 @@ function App() {
       <Header /> <br></br><br></br>
       <Routes>
           <Route   path="/"   element={<ContactList contacts={contacts} reseter={reseter}  getContactId={removeContactHandler} />}/>
-          {/*<Route path="/" render={(props)=>(
-            <ContactList 
-            {...props}
-            contacts={contacts}
-            getContactId={removeContactHandler}
-            reseter={reseter}
-             />
-             />
-          )}*/}
-          
           <Route   path="/add" element={<AddContact addContactHandler={addContactHandler}/>} />
-          {/*<AddContact addContactHandler={addContactHandler}/>
-           <ContactList contacts={contacts} getContactId={removeContactHandler}/>*/}
+          <Route   path="/contact/:id" element={<ContactDetail />} />
       </Routes>
      </BrowserRouter>
     </div>

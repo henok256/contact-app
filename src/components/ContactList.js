@@ -9,37 +9,35 @@ const ContactList=(props)=>{
     };
     const reseterV=(id)=>{
       props.reseter(id);
-    }
-  /*const contacts=[{
-    name:"henok",
-    email:"henok23@gmail.com",
-    id:1
-  },{
-    name:'ayele',
-    email:'hdshsh@yahoo.com'
-  }
-    ];*/
+    };
+  
 
-    const renderContactList = props.contacts.map((contact)=>{
-        return (
-          <ContactCard 
-          contact={contact} 
+    const renderContactList = props.contacts.map((contact, index) => {
+      return (
+        <ContactCard
+          contact={contact}
           clickHandler={deleteContactHandler}
           key={contact.id}
-          />
-        );
-       
+          index={index +1}
+        />
+      );
     });
     return (
     <div className='main'>
-     <h1>Contact List</h1>
-     <Link to="/add">
-     <button className='ui button blue right' style={{"float":"right"}}>Add Contact</button>
-     </Link>
-     <button onClick={reseterV}>reset</button>
-      <div>{renderContactList}</div>
+      <h1 className="header-tag">Contact List</h1>
+      <div>
+       < ol>
+          {renderContactList}
+       </ol> 
+        </div>
+      <div className='reset-center'>
+  <button className='same-color ui button blue' onClick={reseterV}>Clear all the contact</button>
+  <Link to="/add">
+    <button className='same-color ui button blue'>Add Contact</button>
+  </Link>
+</div>
     </div>
-    )
+    );
 }
 
 export default ContactList;
