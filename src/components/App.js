@@ -6,6 +6,7 @@ import Header from "./Header";
 import AddContact from './AddContact';
 import ContactList from './ContactList';
 import ContactDetail from './ContactDetail';
+import DeleteContact  from './deleteContact';
 
 function App() {
   const LOCAL_STORAGE_KEY="contacts";
@@ -20,11 +21,17 @@ function App() {
 
   };
   const removeContactHandler=(id)=>{
-    const newContactList= contacts.filter((contact)=>{
-      return contact.id !== id;
-    });
-    setContacts(newContactList);
+    
+      const input=window.prompt("iy you are sure to delete the contact, write anything");
+      if(input!=null){
+        const newContactList= contacts.filter((contact)=>{
+          return contact.id !== id;
+        });
+        setContacts(newContactList);
+      }
   };
+    
+  
 
   useEffect(()=>{  // fetching data from local starage
     const retrieveContacts =JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY));
@@ -35,15 +42,16 @@ function App() {
       localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(contacts));
   }, [contacts]);
   
-  
   return (
     <div className='ui container'>
       <BrowserRouter>
       <Header /> <br></br><br></br>
       <Routes>
+      
           <Route   path="/"   element={<ContactList contacts={contacts} reseter={reseter}  getContactId={removeContactHandler} />}/>
           <Route   path="/add" element={<AddContact addContactHandler={addContactHandler}/>} />
           <Route   path="/contact/:id" element={<ContactDetail />} />
+          <Route path="/delete" element={<DeleteContact />} />
       </Routes>
      </BrowserRouter>
     </div>

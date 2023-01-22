@@ -1,4 +1,30 @@
-*{margin:0;}
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+.header-tag, .heading{
+  box-sizing: border-box;
+}
+.heading, .header-tag{
+  
+  position: absolute;
+  left: 0;
+  right: 0;
+  text-align: center;
+  width: 100%;
+  background-color: burlywood;
+}
+
+
+
+body{
+  width: 100%;
+}
+.main{
+  width: 100vw;
+  padding: 0;
+  margin: 0;
+}
 
 
 .heading{
@@ -21,8 +47,6 @@
 }
 
 
-
-
 .header-tag {
   display:block;
   background-color:burlywood;
@@ -31,8 +55,6 @@
   color: black;
   
 }
-
-
 
 .center-div{
   display:flex;

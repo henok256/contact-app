@@ -6,6 +6,7 @@ const Header = ()=>{
         <div className='ui fixed menu'>
             <div className='ui container center'>
              <h2 className='heading'>Contact Manager</h2>
+             
             </div>
         </div>
     )

@@ -10,7 +10,6 @@ const ContactList=(props)=>{
     const reseterV=(id)=>{
       props.reseter(id);
     };
-  
 
     const renderContactList = props.contacts.map((contact, index) => {
       return (
