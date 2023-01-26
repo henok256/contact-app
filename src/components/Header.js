@@ -3,9 +3,9 @@ import React from 'react';
 
 const Header = ()=>{
     return (
-        <div className='ui fixed menu'>
-            <div className='ui container center'>
-             <h2 className='heading'>Contact Manager</h2>
+        <div className='header-main' >
+            <div className='ui container center' >
+               <h2 className='heading' >Contact Manager App</h2>
              
             </div>
         </div>

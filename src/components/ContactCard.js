@@ -16,9 +16,13 @@ import {Link} from 'react-router-dom';
     </Link>
   </div>
   <i className='trash alternate outline icon' 
-  style={{color:"red", marginTop:"7px"}} 
-  onClick={()=>props.clickHandler(id)}></i>
-
+  style={{color:"red", marginTop:"4px", marginLeft:"10px", marginBottom:"15px"}} 
+  onClick={()=>props.clickHandler(id)}></i> 
+  <Link to="/edit" state={{from: props.contact}}>
+  <i className='edit alternate outline icon' 
+      style={{color:"blue", marginTop:"4px"}} 
+  ></i>
+  </Link>
     </li>
 </div>
 );  

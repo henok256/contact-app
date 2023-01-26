@@ -1,65 +1,33 @@
-* {
-  margin: 0;
-  box-sizing: border-box;
+.header-main{
+  background-color: bisque;
+  margin-bottom: -40px;
 }
-.header-tag, .heading{
-  box-sizing: border-box;
+.header-tag{
+background-color: bisque;
+margin-bottom: 45px;
 }
-.heading, .header-tag{
-  
-  position: absolute;
-  left: 0;
-  right: 0;
+.heading {
   text-align: center;
-  width: 100%;
-  background-color: burlywood;
-}
-
-
-
-body{
-  width: 100%;
-}
-.main{
-  width: 100vw;
-  padding: 0;
   margin: 0;
+  width:100%;
+  background-color: bisque;
+  /*margin-top: -20px; /* to overlap with h2 */
+  /*position: relative; /* to position the heading on top of h2 */
+  z-index: 1; /* to ensure the heading is on top */
+}
+.tools{
+  display: flex;
+  justify-content: space-between;
 }
 
-
-.heading{
-  text-align: center;
-  width: 100%;
-  background-color: burlywood;
-  
-}
 .reset-center {
   display: flex;
-  justify-content: center;
-  align-items:center;
+  justify-content:space-between;
 }
-
-.reset-center button {
-  margin:  1em;
-  width: 100px;
-  height: 55px;
-  text-align:center;
+.same-color {
+  background-color: blue;
 }
-
-
 .header-tag {
-  display:block;
-  background-color:burlywood;
   width: 100%;
   text-align: center;
-  color: black;
-  
 }
-
-.center-div{
-  display:flex;
-  align-items: center;
-  justify-content: center;
-}
-
-
